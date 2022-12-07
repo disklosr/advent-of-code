@@ -13,36 +13,28 @@ class Node:
         self.dirs.append(child)
         self.size += child.size
 
-    def get_dir(self, dir_name):
-        for d in self.dirs:
-            if d.name == dir_name:
-                return d
-
-    def has_child(self):
-        return len(val) != 0
-
-    def compute_size(self):
-        self.size = sum()
-
 def read_dir(node, lines, sizes):
-    #entering a new dir via cd
-    #ignore next line as it is ls
+    # entering a new dir via cd
+    # ignore next line as it is ls
     next(lines)
 
     for line in lines:
         line = line.strip()
 
+        # Going back to parent dir
         if line == '$ cd ..':
             sizes.append(node.size)
             return
 
+        # Entering and parsing a new dir
         elif line[0:5] == '$ cd ':
             dir_name = line[5:]
             dir_node = Node(dir_name, 0)
             read_dir(dir_node, lines, sizes)
             node.add_dir(dir_node)
 
-        # dir definition ignore it for now
+        # dir definition can be ignored
+        # since we'll cd into it later
         elif line[0:3] == 'dir': 
             continue
         
