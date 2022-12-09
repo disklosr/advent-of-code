@@ -14,7 +14,7 @@ res_set = set()
 res_set.add(rope[0])
 
 for m in moves:
-    print(m)
+    #update master head
     head = rope[-1]
     if   m == 'R':
         head = (head[0], head[1] + 1)
@@ -27,8 +27,7 @@ for m in moves:
 
     rope[-1] = head
 
-    #update tails
-
+    #update tails relative to their heads
     for i in reversed(range(9)):
         head = rope[i + 1]
         tail = rope[i]
