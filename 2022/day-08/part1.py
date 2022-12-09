@@ -1,3 +1,4 @@
+import numpy as np
 lines = open('input.txt')
 
 dim = 0
@@ -6,6 +7,8 @@ for line in lines:
     line = line.strip()
     dim = len(line)
     map.append([int(i) for i in line])
+
+map = np.array(map)
 
 visible = 2*dim + 2 * (dim-2)
 
