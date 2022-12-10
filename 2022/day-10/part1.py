@@ -6,17 +6,22 @@ register = 1
 queue = []
 cycle = 0
 
-for idx, line in enumerate(lines):
-    line = line.strip()
+# As long as there are lines to read 
+# or instructions in queue to execute
+while (line := next(lines, None)) is not None or any(queue):
     cycle += 1
+    
+    if line is not None:
+        line = line.strip()
 
-    ins = line[0:4]
-    cycles = 2 if ins == 'addx' else 1
-    value = int(line[5:]) if ins == 'addx' else 0
-    queue += [(ins, cycles, value)]
+        # Read instructions into queue
+        ins = line[0:4]
+        cycles = 2 if ins == 'addx' else 1
+        value = int(line[5:]) if ins == 'addx' else 0
+        queue += [(ins, cycles, value)]
 
+    # Update result as we go
     if cycle in lof:
-        print(('cycle', cycle, 'register', register, 'signal',cycle * register))
         result += cycle * register
 
     if any(queue):
@@ -25,25 +30,6 @@ for idx, line in enumerate(lines):
             queue[0] = (ins, remaining_cycles - 1, value)
         else:
             register += value
-            del queue[0]
-
-while any(queue):
-    cycle += 1
-
-    if cycle in lof:
-        result += cycle * register
-
-    if cycle in lof or (cycle -1) in lof or (cycle + 1) in lof:
-        print(('cycle', cycle, 'register', register, 'signal',cycle * register))
-
-    (ins, remaining_cycles, value) = queue[0]
-    if remaining_cycles == 2:
-        queue[0] = (ins, remaining_cycles - 1, value)
-    else:
-        register += value
-        del queue[0]
-
-    
+            del queue[0]    
 
 print(result)
-
