@@ -39,3 +39,14 @@ Here's the produced result from my input:
 ```
 
 I don't know what that means, but getting it to display correctly on "first" try was awesome.
+
+### Day 11
+
+So we find ourself surrounded by monkeys that stole some personal items and are now passing them around to each other. Monkeys are able to sense our worry about items and use it to decide to which monkey to pass items.
+
+Part1: The input seemed a pain to parse at first, luckily it wasn't a small input that can be hardcoded into the solution, so no need to write a parser today. In the first 30 minutes I have read the puzzle and have my input ready to be processed. The next 1h20mn are spent debugging stupid bugs and realizing I haven't read the instructions carefully (I overlooked the worry level that should be divided by 3)
+
+Part2: Our here can no longer manage its worry level (by divising it by 3). It'll now skyrocket to crazy unmanageable levels. Not only that but we need to run the simulation for 10k times as opposed to 20 in the first part. It is clearly an optimization problem! So I remove the worry management code, and I run my code for 1k rounds, the fans on my laptop started kicking-in and the execution took forever. Brute force is not an option, as always with AoC puzzles. I spent some time thinking about optimizing code, finding memory or bottlnecks. Eventually I realized the continuous squaring of values that some monkeys do is the true bottlneck. Took me about 30mn to find a strategy to use and another 30mn to implement it correctly.
+
+
+I hated monkeys before, now I hate them even more!

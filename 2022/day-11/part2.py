@@ -1,5 +1,6 @@
-from tqdm import tqdm
 import math
+
+# Input literally parsed by hand
 monkeys = [
     (
         [89,95,92,64,87,68], 
@@ -37,6 +38,8 @@ monkeys = [
     ),
 ]
 
+# product of all modulos used by monkeys
+# for their worry tests
 modulo = math.prod([2,13,3,17,19,7,11,5])
 
 result = [0 for i in monkeys]
@@ -53,7 +56,5 @@ for r in range(10000):
 
         monkeys[idx] = ([], worryf, targetf)
 
-print()
-print(result)
 result.sort()
 print(result[-1] * result[-2])

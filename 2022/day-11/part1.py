@@ -1,4 +1,4 @@
-from tqdm import tqdm
+# Input literally parsed by hand
 monkeys = [
     (
         [89,95,92,64,87,68], 
@@ -36,54 +36,21 @@ monkeys = [
     ),
 ]
 
-monkeys2 = [
-    (
-        [79, 98], 
-        lambda x: x * 19, 
-        lambda x: 2 if x%23 == 0 else 3
-    ),
-    (
-        [54, 65, 75, 74], 
-        lambda x: x + 6, 
-        lambda x: 2 if x%19 ==0 else 0
-    ),
-    (
-        [79, 60, 97], 
-        lambda x: x * x, 
-        lambda x: 1 if x%13 ==0 else 3
-    ),
-    (
-        [74], 
-        lambda x: x + 3, 
-        lambda x: 0 if x%17 ==0 else 1
-    ),
-]
-
 result = [0 for i in monkeys]
 
-for idx, (items,a,b) in enumerate(monkeys):
-    print((idx, items))
-
 for r in range(20):
-    #print(f'####### Round {r+1} #######')
     for idx, turn in enumerate(monkeys):
         (items, worryf, targetf) = monkeys[idx]
         result[idx] += len(items)
-        #print(items)
         for item in items:
             picked = item
             picked = worryf(picked)
             picked = picked // 3
             target = targetf(picked)
-            #print((picked, target))
             monkeys[target][0].append(picked)
-
+        
         monkeys[idx] = ([], worryf, targetf)
-
-    #for idx, (items,a,b) in enumerate(monkeys):
-        #print((idx, items))
 
 
 result.sort()
-print(result)
 print(result[-1] * result[-2])
