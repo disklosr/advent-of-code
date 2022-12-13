@@ -55,8 +55,20 @@ I hated monkeys before, now I hate them even more!
 
 I failed miserably at it. I'm still not good with path finding algorithms. I came back to it later on the day and implemented A*, then Dijkstra. Both worked on example but not on actual input. Will have to come back to it later.
 
+EDIT: Ok I have now solved both parts, almost two days later.
+
+Part1: It is clear as sky that it's about a path finding algorithm. I'm not familiar enough with these types of algorythms but I know pretty well the theory and I needed some time to refresh my memory on how to implement some of them. Obviously I couldn't solve part1 in the morning so I gave it another try the evening. After a good refresher on Youtube I implemented A*, I run my code on example input and it worked. On real input the result was wrong! I doubled checked my A* algorithm and everything was correct. I was out of ideas and I decided to leave it for another day. Next day evening I gave it another try, this time I tried vizualizing my input and the path found by my A* to see what's actually happening with my code. And surprize surprize, I saw something strange! The vizualization I've done is colormapped, the color transition nicely for the whole map except for one single point. Turned out that one single point is supposed to be the starting poit for my A* algorithm, and I made the stupid mistake of starting from point (0,0) because that's what the starting point on the example. I faceplamed really hard, but at the same time I was relieved that there was nothing wrong with my code, only with the input parameters. Once I set the correct starting point, I got the correct answer (which, interestingly, was one unit of lenght more than my previous wrong answer with the wrong starting point. I could have just called it a off-by-one error and resubmit my wrong answer +1 or -1)
+
+Part2: I brute forced my way into it. I run A* for all possible starting points, it took few seconds before computing the optimal result but it was correct on first try. Now that I think about it, it might have been easier to just run A* by starting from the end and stpooing at the first eligible point. I still kept my brute force version.
+
+I is inevitable to waste time on stupid errors that come only from misreading the instructions. I should be more careful to read everything properly and not miss anything of importance. I also got a good refresher on path finding algorithms so I'll be more prepared and confident for later puzzles that might require them.
+
+Too bad Day 12 broke my streak of solving day puzzles before starting my day.
+
 ### Day 13
 
 Part1: I cheated my way out of parsing by using eval. I think that's find because AoC is not about parsing but actually solving the problem. So thanks Python! Implementing the sorting wasn't a big challenge just some type errors and inputs that were not in the right order. Other than that it was straight forward.
 
 Part2: Was a breeze. Adapted the already implemented comparing function to return [-1,0,1] instead of [True,False,None] so it can work with sort function of Python. Worked on first try. It's a reliefe from past day problems which consistently gave me a hard time solving them.
+
+I learned about the use of Python's `eval` and the safer version `literal_eval`. Input could also have been parsed using any json parser since every line is a valid json array. So far I really like Python, I never felt it was in the way of me solving puzzles, even though I am not as proficient in it as in C#, which btw I'll never use for solving puzzles as it is verbose and not as elegant as Python.
