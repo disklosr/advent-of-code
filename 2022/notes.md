@@ -50,3 +50,13 @@ Part2: Our here can no longer manage its worry level (by divising it by 3). It'l
 
 
 I hated monkeys before, now I hate them even more!
+
+### Day 12
+
+I failed miserably at it. I'm still not good with path finding algorithms. I came back to it later on the day and implemented A*, then Dijkstra. Both worked on example but not on actual input. Will have to come back to it later.
+
+### Day 13
+
+Part1: I cheated my way out of parsing by using eval. I think that's find because AoC is not about parsing but actually solving the problem. So thanks Python! Implementing the sorting wasn't a big challenge just some type errors and inputs that were not in the right order. Other than that it was straight forward.
+
+Part2: Was a breeze. Adapted the already implemented comparing function to return [-1,0,1] instead of [True,False,None] so it can work with sort function of Python. Worked on first try. It's a reliefe from past day problems which consistently gave me a hard time solving them.
