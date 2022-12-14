@@ -63,6 +63,10 @@ Part2: I brute forced my way into it. I run A* for all possible starting points,
 
 I is inevitable to waste time on stupid errors that come only from misreading the instructions. I should be more careful to read everything properly and not miss anything of importance. I also got a good refresher on path finding algorithms so I'll be more prepared and confident for later puzzles that might require them.
 
+Here's a viz of my found path to get from Start to End of map.
+
+![da12-viz](./day-12/part1-viz.png)
+
 Too bad Day 12 broke my streak of solving day puzzles before starting my day.
 
 ### Day 13
