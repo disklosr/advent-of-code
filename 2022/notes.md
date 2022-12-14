@@ -73,6 +73,14 @@ Part2: Was a breeze. Adapted the already implemented comparing function to retur
 
 I learned about the use of Python's `eval` and the safer version `literal_eval`. Input could also have been parsed using any json parser since every line is a valid json array. So far I really like Python, I never felt it was in the way of me solving puzzles, even though I am not as proficient in it as in C#, which btw I'll never use for solving puzzles as it is verbose and not as elegant as Python.
 
-Here's a viz of my input after filling it with sand
+### Day 14
+
+We're inside a cave and sand starts to fall down from the roof. We need to quickly simulate the final state of the cave after all sand have fallen to avoid getting trapped.
+
+Part1: Input was a bit of a pain to parse and it took longer than solving the actual problem. I decided to build a set of all obstacles in the map so my simulation can be easy to run. It was a good decision and I got exactly what I expected. To be fair the rules of sand falling are pretty simple. After some few tweaks, bug hunting and avoidance of infinite loops, I got the correct result.
+
+Part2: The model I built in Part1 was good enough for solving part2 without any issues. I tweaked the map as suggested in puzzle description and run the simulation again. In fact, I remember me incorectly impelenting in Part1 exactly what was asked in Part2, so when I read Part2 I realized that and I just has to rewrite code I've already written before. Took me 6mn to get the correct result with no major issues.
+
+Although the solution was correct, it'd be a shame to stop at abstract code and not do some viz for such a visual puzzle. So here's a viz of my input after filling it with sand. Beautiful!
 
 ![da14-viz](./day-14/part1-viz.png)
