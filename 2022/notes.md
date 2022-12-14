@@ -72,3 +72,7 @@ Part1: I cheated my way out of parsing by using eval. I think that's find becaus
 Part2: Was a breeze. Adapted the already implemented comparing function to return [-1,0,1] instead of [True,False,None] so it can work with sort function of Python. Worked on first try. It's a reliefe from past day problems which consistently gave me a hard time solving them.
 
 I learned about the use of Python's `eval` and the safer version `literal_eval`. Input could also have been parsed using any json parser since every line is a valid json array. So far I really like Python, I never felt it was in the way of me solving puzzles, even though I am not as proficient in it as in C#, which btw I'll never use for solving puzzles as it is verbose and not as elegant as Python.
+
+Here's a viz of my input after filling it with sand
+
+![da14-viz](./day-14/part1-viz.png)

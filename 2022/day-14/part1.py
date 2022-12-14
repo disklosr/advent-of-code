@@ -31,9 +31,9 @@ print('abyss:', abyss_row)
 print('obstacles: ',len(obstacles))
 
 # Given a sand in a cur position
-# Computes its next possible position according
-# to sand falling rules. If it can't move return
-# current position
+# Computes its next possible position 
+# according to sand falling rules.
+# If it can't move return current position
 def move(cur, obstacles, sand):
     for dir in [(0,1),(-1,1),(1,1)]:
         nxt = (cur[0] + dir[0], cur[1] + dir[1])
@@ -41,6 +41,7 @@ def move(cur, obstacles, sand):
             return nxt
 
     return cur
+
 # Start sand simulation
 sand_src = (500,0)
 sand = set()
