@@ -88,3 +88,23 @@ Part2: The model I built in Part1 was good enough for solving part2 without any 
 Although the solution was correct, it'd be a shame to stop at abstract code and not do some viz for such a visual puzzle. So here's a viz of my input after filling it with sand. Beautiful!
 
 ![da14-viz](./day-14/part1-viz.png)
+
+### Day 15
+
+Part1: Given a list of diamonds with varying shapes, the problem is to find the numner of interesection between all diamonds and a specific row. I brute forced my way into this without any shame. My solution takes a few seconds to compute so I'm sure there are smarter ways to find the answer but for now my code does the job.
+
+Part2: I tried bruteforcing but tqdm reported it'll take ages. I gave up after a few mintes and thought about the problem on my way to work. I realized the point we're looking for must be at the edge of a diamond, so that reduces the number of points I needed to test to find the answer. Once I was back home I implemented my idea and it worked, although answer needed about 3mn to compute but that was reasonable and I was happy to get my 2 starts for the day. I checked other peopl's answers on reddit and OMG solutions were all over the place. Some using pure mathematics to compute the answer, some have brute forced it, some have used online tools to plot the shapes and manually find the answer. It was cool seeing how creative people were at this puzzle.
+
+### Day 16
+
+Another path finding puzzle that requires being familiar with graph theory! I couldn't do a thing first time and I decided to do it later. Next day I gave it a real try and was able to write a decent strategy that works with the example but performance is so poor there's no change it can run on actual input. I implemented a simple graph traversal algorithm with a few optimizations here and there but that's not enough. I'll have to get back to this later as I don't have the sligntest idea on how I can write some decent solver. 
+
+### Day 17
+
+Basically a Tetris game simulator where the input is the actual player's input and the answer requires running a simulation of it.
+
+Part1: Game rules seem to be simple enough but there's a lot of things going on so there will be bugs everywhere and the competitive advantage is doing as few bugs as possible to move fast. I had my big share of bugs for this one, took me few hours of debugging to get it right. Numpy sure did help and my strategy was also simple and a good fit for the problem.
+
+Part2: The answer requires simulating 10^12 moves of the game. There's no way you can brute force your way around this. If by miracle you can simulate 10^6 moves each second, the full simulation would still need 11 days of runtime to finish. So when I saw that big number I knew I needed to change strategy. After few minutes I wondered if there were some pattern in the tetris that I can exploit, and sure they were. Finding the pattern was quick, but using it to find the answer took me a while, but I eventually found the correct answer and took the care to document my code and make it work with any input (provided all user inputs are periodic).
+
+It was a fun puzzle. Not a difficult one but an interesting and a gratifying one nonetheless.
