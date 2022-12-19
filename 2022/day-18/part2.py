@@ -1,7 +1,4 @@
 import numpy as np
-from matplotlib import pyplot as plt
-from tqdm import tqdm
-from collections import defaultdict
 
 points = set()
 mx, my, mz = (0,0,0)
@@ -19,9 +16,6 @@ for p in points:
 
 print('Shape of 3d array is', t.shape)
 print('Length of 3d array is', t.size)
-
-def prioritize(q: list):
-    q.sort(key=lambda p: abs(p[0]) + abs[p[1]] + abs(p[2]), reverse=True)
 
 def explore3d(point):
     # directions: left right up down front back
