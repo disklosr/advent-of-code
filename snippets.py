@@ -30,3 +30,12 @@ res.ravel()
 
 res = np.arange(50).reshape((10,5))
 res[2:4,2:4] # lines 2 and 3 with columns 2 and 3
+
+# Plot 3d array
+from matplotlib import pyplot as plt
+t = np.ones((5,5,5))
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+z,x,y = t.nonzero()
+ax.scatter(x, y, z, c=z, alpha=1)
+plt.show()
