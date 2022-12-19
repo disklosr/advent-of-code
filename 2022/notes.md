@@ -108,3 +108,15 @@ Part1: Game rules seem to be simple enough but there's a lot of things going on 
 Part2: The answer requires simulating 10^12 moves of the game. There's no way you can brute force your way around this. If by miracle you can simulate 10^6 moves each second, the full simulation would still need 11 days of runtime to finish. So when I saw that big number I knew I needed to change strategy. After few minutes I wondered if there were some pattern in the tetris that I can exploit, and sure they were. Finding the pattern was quick, but using it to find the answer took me a while, but I eventually found the correct answer and took the care to document my code and make it work with any input (provided all user inputs are periodic).
 
 It was a fun puzzle. Not a difficult one but an interesting and a gratifying one nonetheless.
+
+### Day 18
+
+This problem was a bit different than all the others because the problem description was so concice and I had to spend time actually understanding what was asked. The example didn't do a good job at explaining the puzzle but maybe that's intentional for the last puzzles?
+
+Part1: Before understanding what's needed I had a feeling this will give me a hard time or that it's probably not something I can solve. The more I understood the more confident I became. Once I fully grasped what's needed for this part the answer was surprizingly simple. The challenge was really understanding the puzzle
+
+Part2: Same issue as part1 since the explanation wasn't that clear but I still understood it quickly this time. However, I had no good strategy to tackle it so I had to stop and come back later once I have a plan. I have a negative bias against graph theory kind of puzzle and I fear them easily. It was the case with this puzzle. I spent few minutes throughout the day to think of a decent strategy for finding the different clusters and I found one. I quickly implemented it, it worked on example input but not on real one. I had to spend 2 hours of debugging and input analysis to figure out the bug. Edge elements are always reachable, and my code for finding unreachable elements was wrongly picking up those. Now that's what I call an "Edge case".
+
+This was also an excuse to try plotting a 3d matrix of my input. Here it is:
+
+![day18-viz](./day-18/viz.png)

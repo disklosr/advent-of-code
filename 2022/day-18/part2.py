@@ -30,7 +30,7 @@ def explore3d(point):
 
 def isedge(p):
     x,y,z = p
-    if x != 0 and x != 21 and y != 0 and y != 21 and z != 0 and z != 20:
+    if x != 0 and x != mx and y != 0 and y != my and z != 0 and z != mz:
         return False
     return True
 
